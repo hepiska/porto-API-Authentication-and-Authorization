@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="usershow">
+      <div class="headerapp">
+           <div class="columns is-desktop centercoll">
+            <div class="column is-1 is-offset-11" @click='logout()'><a class="button">log out</a></div>
+          </div>
+      </div>
+
+      <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="name">name</abbr></th>
+        <th>email</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for='user in users'>
+        <th><abbr title="name">{{user.name}}</abbr></th>
+        <th>{{user.email}}</th>
+        <th> <a class="button is-black">edit</a>  <a class="button is-black">delete</a></th>
+      </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </body>
+  <style media="screen">
+    .headerapp{
+      background-color: black;
+      height: 60px;
+    }
+    .centercoll{
+      padding: 5px;
+    }
+    h1{
+      font-size: 50px;
+    }
+    h2{
+      font-size: 30px;
+    }
+    .wellcometext{
+      text-align: center;
+      margin: 100px;
+    }
+  </style>
+  <script type="text/javascript" src='./js/user.js'></script>
+</html>

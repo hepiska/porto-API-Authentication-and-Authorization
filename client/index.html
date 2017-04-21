@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>user</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+   <script src="https://unpkg.com/vue@2.2.6"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="userapp">
+        <div class="headerapp">
+             <div class="columns is-desktop centercoll">
+              <div class="column is-1 is-offset-10" @click='modalregison()'><a class="button">regiter </a></div>
+              <div class="column is-1" @click='modalloginon()'><a class="button">login</a></div>
+            </div>
+        </div>
+      <div class="wellcometext">
+         <h1>halo user selamat datang</h1>
+         <h2>silahkan login atau register</h2>
+      </div>
+<!-- modal register -->
+      <div class="modal" v-bind:class="{'is-active':stye.modalregis}">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">register</p>
+            <button class="delete" @click='modalregisoff()'></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+             <label class="label">name</label>
+             <p class="control">
+               <input class="input" type="text" placeholder="Text input" v-model='register.name'>
+             </p>
+            </div>
+            <div class="field">
+             <label class="label">email</label>
+             <p class="control">
+               <input class="input" type="text" placeholder="Text input" v-model='register.email'>
+             </p>
+            </div>
+            <div class="field">
+             <label class="label">password</label>
+             <p class="control">
+               <input class="input" type="password" placeholder="Text input" v-model='register.password'>
+             </p>
+            </div>
+
+          </section>
+          <footer class="modal-card-foot">
+            <a class="button is-success" @click='postregister()'>register</a>
+            <a class="button" @click='modalregisoff()'>Cancel</a>
+          </footer>
+        </div>
+      </div>
+
+<!-- modal login -->
+<div class="modal" v-bind:class="{'is-active':stye.modallogin}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">login</p>
+      <button class="delete" @click='modalloginoff()'></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="field">
+       <label class="label">email</label>
+       <p class="control">
+         <input class="input" type="text" placeholder="Text input" v-model='login.email'>
+       </p>
+      </div>
+      <div class="field">
+       <label class="label">password</label>
+       <p class="control">
+         <input class="input" type="password" placeholder="Text input" v-model='login.password'>
+       </p>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <a class="button is-success" @click='postlogin()'>login</a>
+      <a class="button" @click='modalloginoff()'>Cancel</a>
+    </footer>
+  </div>
+</div>
+
+
+  </div>
+  </body>
+  <style media="screen">
+    .headerapp{
+      background-color: black;
+      height: 60px;
+    }
+    .centercoll{
+      padding: 5px;
+    }
+    h1{
+      font-size: 50px;
+    }
+    h2{
+      font-size: 30px;
+    }
+    .wellcometext{
+      text-align: center;
+      margin: 100px;
+    }
+  </style>
+<script type="text/javascript" src='./js/script.js'></script>
+</html>
